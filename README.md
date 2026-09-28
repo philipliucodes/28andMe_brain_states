@@ -44,10 +44,13 @@ control.
 7. Relate those measures to continuous estradiol and progesterone levels, with
    sensitivity checks for time/cycle structure and motion censoring.
 
-The precise candidate state range, PCA dimension, covariance structure, and
-selection rule will be finalized after the initial exploratory notebook. This
-keeps “optimal” explicit rather than equating it with the model having the
-largest in-sample likelihood.
+The preprocessing audit supports z-scoring every parcel within each session and
+using a shared 24-component PCA representation (at least 80% variance retained)
+for the primary HMM. PCA will be refit inside each model-selection training fold
+and then fit once to all 30 sessions for the final model. The unreduced 100-parcel
+representation will be a sensitivity analysis. The candidate state range,
+covariance structure, and selection rule remain to be finalized; this keeps
+“optimal” explicit rather than equating it with the largest in-sample likelihood.
 
 ## Missing-TR policy
 
@@ -95,4 +98,3 @@ consistently. Update the environment explicitly when adding a dependency.
 - Keep prose and comments brief and useful.
 - Set and record random seeds for stochastic models.
 - Save model-selection diagnostics, not only the selected result.
-
