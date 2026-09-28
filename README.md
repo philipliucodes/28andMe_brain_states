@@ -54,10 +54,14 @@ covariance structure, and selection rule remain to be finalized; this keeps
 
 Initial model selection compares diagonal Gaussian HMMs with 3–15 states using
 five session-level folds and ten deterministic initializations per fold and state
-count. All 650 fits converged. Held-out likelihood continued improving through
-the tested range while gains flattened, and the smallest held-out state occupancy
-dropped sharply near eight states. These diagnostics do not yet justify a final
-state count.
+count. Matched parcel and PCA pipelines each completed 650 converged fits using
+the same folds and seeds. State stability is measured within fold and state count
+using all seed pairs, cosine similarity of state means, and Hungarian matching.
+Mean matched similarity ranged from about 0.96–1.00 for parcels and 0.69–0.86
+for PCA. The plateau rule requires two consecutive mean held-out gains below
+0.01 log-likelihood units per valid TR; neither representation reached that rule
+within the tested range, and both had their highest mean held-out likelihood at
+15 states. No final state count has been selected.
 
 ## Missing-TR policy
 
