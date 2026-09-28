@@ -52,6 +52,13 @@ representation will be a sensitivity analysis. The candidate state range,
 covariance structure, and selection rule remain to be finalized; this keeps
 “optimal” explicit rather than equating it with the largest in-sample likelihood.
 
+Initial model selection compares diagonal Gaussian HMMs with 3–15 states using
+five session-level folds and ten deterministic initializations per fold and state
+count. All 650 fits converged. Held-out likelihood continued improving through
+the tested range while gains flattened, and the smallest held-out state occupancy
+dropped sharply near eight states. These diagnostics do not yet justify a final
+state count.
+
 ## Missing-TR policy
 
 The primary analysis treats each uninterrupted run of observed TRs as a
