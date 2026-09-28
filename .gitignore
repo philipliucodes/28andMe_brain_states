@@ -1,0 +1,16 @@
+.DS_Store
+.ipynb_checkpoints/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Local source material and generated results
+Proposal.pdf
+data/raw/
+results/figures/*
+results/tables/*
+
+# Keep output directories in the repository
+!results/figures/.gitkeep
+!results/tables/.gitkeep
+
